@@ -9,14 +9,7 @@ function anagramme($mot, $dictionnaire) {
 
         if (strlen($item) == strlen($mot)){
             $mot_dictionnaire = str_split($item);
-            $bon = true;
 
-            foreach ($mot_array as $lettre) {
-                if(!in_array($lettre,$mot_dictionnaire)){
-                    $bon = false;
-                    break;
-                }
-            }
             if ($bon == true) {
                 $anagramme[] = $item;
             }
@@ -29,6 +22,18 @@ function anagramme($mot, $dictionnaire) {
 }
 
 function isInArray($mot_array, $mot_dictionnaire){
+    $bon = true;
 
+    foreach ($mot_array as $lettre) {
+        if(!in_array($lettre,$mot_dictionnaire)){
+            $bon = false;
+            break;
+        }
+    }
+
+    return $bon;
 }
-var_dump(anagramme("marie", $dictionnaire));
+//var_dump(anagramme("marie", $dictionnaire));
+$tab = ["m", "a", "r", "i", "e"];
+$tabDic = ["a", "i", "m", "e", "r"];
+var_dump(isInArray($tab, $tabDic));
