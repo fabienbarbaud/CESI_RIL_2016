@@ -1,16 +1,17 @@
 <?php
 $dictionnaire = file('liste.txt', FILE_IGNORE_NEW_LINES);
 
-function anagrammes($mot, $dictionnaire) {
+function anagrammes($mot, $dictionnaire)
+{
     $mot_array = str_split($mot);
     $anagramme = array();
 
     foreach ($dictionnaire as $index => $item) {
 
-        if (strlen($item) == strlen($mot)){
+        if (strlen($item) == strlen($mot)) {
             $mot_dictionnaire = str_split($item);
 
-            if (isAnagram($mot_array,$mot_dictionnaire)) {
+            if (isAnagram($mot_array, $mot_dictionnaire)) {
                 $anagramme[] = $item;
             }
         }
@@ -20,11 +21,13 @@ function anagrammes($mot, $dictionnaire) {
     return $anagramme;
 }
 
-function isAnagram($tab1, $tab2){
+function isAnagram($tab1, $tab2)
+{
     sort($tab1);
     sort($tab2);
     return ($tab1 == $tab2);
 }
+
 var_dump(anagrammes("marie", $dictionnaire));
 
 $tab = ["m", "a", "r", "i", "e"];
