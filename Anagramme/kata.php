@@ -16,10 +16,9 @@ function anagramme($mot, $dictionnaire) {
                     $bon = false;
                     break;
                 }
-
-                if ($bon == true) {
-                    $anagramme[] = $mot_dictionnaire;
-                }
+            }
+            if ($bon == true) {
+                $anagramme[] = $item;
             }
 
 
