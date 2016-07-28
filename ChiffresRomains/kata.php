@@ -15,11 +15,12 @@ $mapping = [
     'M' => 1000,
 ];
 
-function convertToRomain($nbArabe) {
+function convertToRomain($nbArabe, $mapping) {
     $nbRomain =  "";
 
-    for(; $nbArabe == 0;){
-
+    arsort($mapping);
+    foreach ($mapping as $romIndex => $arabeItem) {
+       // $nbArabe/$
     }
     if ($nbArabe >=10) {
         $nbArabe-=10;
