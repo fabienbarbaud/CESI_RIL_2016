@@ -21,9 +21,10 @@ function anagramme($mot, $dictionnaire) {
                 $anagramme[] = $item;
             }
 
-
         }
     }
+    $indexMot = array_search($mot, $anagramme);
+    array_splice($anagramme, $indexMot, 1);
     return $anagramme;
 }
 
