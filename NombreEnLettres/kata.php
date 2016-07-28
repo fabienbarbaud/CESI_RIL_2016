@@ -26,7 +26,6 @@ $dizaines = [
 ];
 $centaines = [
     "cent",
-    "mille",
 ];
 
 $dizainesException = [
@@ -62,8 +61,9 @@ function dizaine($nombre, $dizaines){
     $diz = ($nombre/10)%10;
     return $dizaines[$diz];
 }
-function centaine_plus($nombre, $centaines){
-    $cent = ($nombre/100)%10;
+function centaine($nombre, $centaines){
+    $cent = ($nombre/100)%100;
+    var_dump($cent);
     return $centaines[$cent];
 }
 
@@ -92,16 +92,17 @@ function decoupage($nombre, $chiffres, $dizaines, $dizainesException){
 
     return $chiffreLettre;
 }
-var_dump(decoupage(9, $chiffres, $dizaines, $dizainesException));
+/*var_dump(decoupage(9, $chiffres, $dizaines, $dizainesException));
 var_dump(decoupage(22, $chiffres, $dizaines, $dizainesException));
 var_dump(decoupage(63, $chiffres, $dizaines, $dizainesException));
 var_dump(decoupage(57, $chiffres, $dizaines, $dizainesException));
 var_dump(decoupage(72, $chiffres, $dizaines, $dizainesException));
-/*$un = unite(3, $chiffres);
+$un = unite(3, $chiffres);
 $diz = dizaine(60,$dizaines);
 
 echo $diz.$un;
+
+
+
+echo centaine(147, $centaines);
 */
-
-
-//echo centaine_plus("")
