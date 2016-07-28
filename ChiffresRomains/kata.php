@@ -14,3 +14,9 @@ $mapping = [
     'CM' => 900,
     'M' => 1000,
 ];
+
+function convertToRomain($nbArabe) {
+    for ($i=0; $i<$nbArabe; $i++) {
+
+    }
+}
