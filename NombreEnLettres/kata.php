@@ -25,6 +25,17 @@ $dizaines = [
     "quatre-vingt-dix-"
 ];
 
+$dizainesException = [
+    11 => "onze",
+    12 => "douze",
+    13 => "treize",
+    14 => "quatorze",
+    15 => "quinze",
+    16 => "seize",
+    71 => "soixante et onze",
+    72 => "soixante douze",
+];
+
 function nombreEnLettres($nombre, $chiffres){
 
 
@@ -48,8 +59,9 @@ function dizaine($nombre, $dizaines){
     return $dizaines[$diz];
 }
 
-function decoupage($nombre, $chiffres, $dizaines){
+function decoupage($nombre, $chiffres, $dizaines, $dizainesException){
     $chiffreLettre = "";
+    //if(array_())
     switch (strlen($nombre))
     {
         case 1:
@@ -58,12 +70,13 @@ function decoupage($nombre, $chiffres, $dizaines){
         case 2:
             $diz = ((int)($nombre/10))*10;
             $unit = $nombre%10;
+
             $chiffreLettre = dizaine($diz, $dizaines).unite($unit, $chiffres);
             break;
     }
     return $chiffreLettre;
 }
-var_dump(decoupage(63, $chiffres, $dizaines));
+var_dump(decoupage(72, $chiffres, $dizaines));
 /*$un = unite(3, $chiffres);
 $diz = dizaine(60,$dizaines);
 
