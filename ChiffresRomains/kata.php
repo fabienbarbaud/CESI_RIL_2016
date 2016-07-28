@@ -25,7 +25,6 @@ function convertToRomain($nbArabe, $mapping) {
             $nbRomain .= $romIndex;
             $nbArabe-=$arabeItem;
         }
-
     }
     return $nbRomain;
 }
