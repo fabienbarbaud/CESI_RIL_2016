@@ -20,30 +20,14 @@ function convertToRomain($nbArabe, $mapping) {
 
     arsort($mapping);
     foreach ($mapping as $romIndex => $arabeItem) {
-        $nboccurence = ceil($nbArabe/$arabeItem);
-        for ($i=0;$i <$nboccurence;$i++){
+        $nboccurence = floor($nbArabe/$arabeItem);
+        for ($i = 0;$i < $nboccurence;$i++){
             $nbRomain .= $romIndex;
             $nbArabe-=$arabeItem;
         }
 
     }
-    if ($nbArabe >=10) {
-        $nbArabe-=10;
-        $nbRomain.="X";
-    }
-    if ($nbArabe >= 5) {
-        $nbArabe-= 5;
-        $nbRomain.="V";
-    }
-    if ($nbArabe == 4) {
-        $nbRomain = "IV";
-        $nbArabe -= 4;
-    }
-
-    for ($i=0; $i<$nbArabe; $i++) {
-         $nbRomain.="I";
-    }
     return $nbRomain;
 }
 
-var_dump(convertToRomain(12));
+var_dump(convertToRomain(1,$mapping));
