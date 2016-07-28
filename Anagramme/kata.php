@@ -8,7 +8,12 @@ function anagramme($mot, $dictionnaire) {
 
         if (strlen($item) == strlen($mot)){
             $mot_dictionnaire = str_split($item);
-           // in_array()
+            foreach ($mot_array as $lettre) {
+                if(in_array($lettre,$mot_dictionnaire)){
+
+                }
+            }
+
         }
     }
 }
