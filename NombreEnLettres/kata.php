@@ -48,8 +48,24 @@ function dizaine($nombre, $dizaines){
     return $dizaines[$diz];
 }
 
-$un = unite(3, $chiffres);
+function decoupage($nombre, $chiffres, $dizaines){
+    $chiffreLettre = "";
+    switch (strlen($nombre))
+    {
+        case 1:
+            $chiffreLettre = unite($nombre, $chiffres);
+            break;
+        case 2:
+            $diz = ((int)($nombre/10))*10;
+            $unit = $nombre%10;
+            $chiffreLettre = dizaine($diz, $dizaines).unite($unit, $chiffres);
+            break;
+    }
+    return $chiffreLettre;
+}
+var_dump(decoupage(63, $chiffres, $dizaines));
+/*$un = unite(3, $chiffres);
 $diz = dizaine(60,$dizaines);
 
 echo $diz.$un;
-
+*/
