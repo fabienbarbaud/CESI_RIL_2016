@@ -16,7 +16,19 @@ $mapping = [
 ];
 
 function convertToRomain($nbArabe) {
-    for ($i=0; $i<$nbArabe; $i++) {
-
+    $nbRomain =  "";
+    if ($nbArabe == 4) {
+        $nbRomain = "IV";
     }
+    if ($nbArabe >=5) {
+        $nbArabe-=5;
+        $nbRomain.="V";
+    }
+
+    for ($i=0; $i<$nbArabe; $i++) {
+         $nbRomain.="I";
+    }
+    return $nbRomain;
 }
+
+var_dump(convertToRomain(4));
