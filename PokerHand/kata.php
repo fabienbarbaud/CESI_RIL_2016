@@ -24,15 +24,25 @@ $couleurs = [
 ];
 
 $hand_1 = [
-    [[0],"S",],
-    [[5],"S",],
-    [[3],"C",],
-    [[10],"H",],
-    [[6],"D",],
+    [2,"S",],
+    [5,"S",],
+    ["J","C",],
+    [10,"H",],
+    [6,"D",],
 ];
 
-function highCard(){
-    //
+$hand_2 = [
+    [7,"S",],
+    [7,"C",],
+    ["K","C",],
+    [8,"H",],
+    [2,"D",],
+];
+
+function highCard($hand_1, $valeurs){
+    //foreach ($hand_1 as $ => $item) {
+
+    //}
 }
 function isPair(){
 
