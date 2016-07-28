@@ -28,4 +28,7 @@ function anagramme($mot, $dictionnaire) {
     return $anagramme;
 }
 
+function isInArray($mot_array, $mot_dictionnaire){
+
+}
 var_dump(anagramme("marie", $dictionnaire));
