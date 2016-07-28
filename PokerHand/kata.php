@@ -39,10 +39,16 @@ $hand_2 = [
     [2,"D",],
 ];
 
-function highCard($hand_1, $valeurs){
-    //foreach ($hand_1 as $ => $item) {
-
-    //}
+function highCard($hand, $valeurs){
+    $max = -1;
+    $indexHMax = 0;
+    foreach ($hand as $index => $carte) {
+        if($max<array_search($carte[0],$valeurs)){
+            $max = array_search($carte[0],$valeurs);
+            $indexHMax = $index;
+        }
+    }
+    return($hand[$indexHMax]);
 }
 function isPair(){
 
@@ -68,3 +74,5 @@ function is4ofAKind(){
 function isStraightFlush(){
 
 }
+
+var_dump(highCard($hand_1,$valeurs));
