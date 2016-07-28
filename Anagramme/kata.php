@@ -33,6 +33,10 @@ function isInArray($mot_array, $mot_dictionnaire){
 
     return $bon;
 }
+
+function isAnagram($tab1, $tab2){
+
+}
 //var_dump(anagramme("marie", $dictionnaire));
 
 $tab = ["m", "a", "r", "i", "e"];
