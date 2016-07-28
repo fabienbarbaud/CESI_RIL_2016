@@ -10,7 +10,7 @@ function anagramme($mot, $dictionnaire) {
         if (strlen($item) == strlen($mot)){
             $mot_dictionnaire = str_split($item);
 
-            if ($bon == true) {
+            if (isInArray($item,$mot_dictionnaire)) {
                 $anagramme[] = $item;
             }
 
@@ -34,6 +34,7 @@ function isInArray($mot_array, $mot_dictionnaire){
     return $bon;
 }
 //var_dump(anagramme("marie", $dictionnaire));
+
 $tab = ["m", "a", "r", "i", "e"];
 $tabDic = ["a", "i", "m", "e", "r"];
 var_dump(isInArray($tab, $tabDic));
