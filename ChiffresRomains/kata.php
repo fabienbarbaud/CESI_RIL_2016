@@ -17,12 +17,21 @@ $mapping = [
 
 function convertToRomain($nbArabe) {
     $nbRomain =  "";
+
+    for(; $nbArabe == 0;){
+
+    }
+    if ($nbArabe >=10) {
+        $nbArabe-=10;
+        $nbRomain.="X";
+    }
+    if ($nbArabe >= 5) {
+        $nbArabe-= 5;
+        $nbRomain.="V";
+    }
     if ($nbArabe == 4) {
         $nbRomain = "IV";
-    }
-    if ($nbArabe >=5) {
-        $nbArabe-=5;
-        $nbRomain.="V";
+        $nbArabe -= 4;
     }
 
     for ($i=0; $i<$nbArabe; $i++) {
@@ -31,4 +40,4 @@ function convertToRomain($nbArabe) {
     return $nbRomain;
 }
 
-var_dump(convertToRomain(4));
+var_dump(convertToRomain(12));
