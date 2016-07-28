@@ -27,8 +27,10 @@ function nombreEnLettres($nombre, $chiffres){
 
     if ($nombre >= 0 && $nombre <= 20){
         return $chiffres[$nombre];
+    } elseif ($nombre < 30) {
+       var_dump(str_split($nombre));
     }
 
 }
 
-var_dump(nombreEnLettres(9, $chiffres));
+var_dump(nombreEnLettres(22, $chiffres));
