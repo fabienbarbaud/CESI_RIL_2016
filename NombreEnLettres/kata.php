@@ -24,6 +24,10 @@ $dizaines = [
     "quatre-vingt-",
     "quatre-vingt-dix-"
 ];
+$centaines = [
+    "cent",
+    "mille",
+];
 
 $dizainesException = [
     11 => "onze",
@@ -58,27 +62,46 @@ function dizaine($nombre, $dizaines){
     $diz = ($nombre/10)%10;
     return $dizaines[$diz];
 }
+function centaine_plus($nombre, $centaines){
+    $cent = ($nombre/100)%10;
+    return $centaines[$cent];
+}
 
 function decoupage($nombre, $chiffres, $dizaines, $dizainesException){
     $chiffreLettre = "";
-    //if(array_())
-    switch (strlen($nombre))
-    {
-        case 1:
-            $chiffreLettre = unite($nombre, $chiffres);
-            break;
-        case 2:
-            $diz = ((int)($nombre/10))*10;
-            $unit = $nombre%10;
+    if(empty($dizainesException[$nombre])){
 
-            $chiffreLettre = dizaine($diz, $dizaines).unite($unit, $chiffres);
-            break;
+        switch (strlen($nombre))
+        {
+            case 1:
+                $chiffreLettre = unite($nombre, $chiffres);
+                break;
+            case 2:
+                $diz = ((int)($nombre/10))*10;
+                $unit = $nombre%10;
+
+                $chiffreLettre = dizaine($diz, $dizaines).unite($unit, $chiffres);
+                break;
+            case 3:
+
+                break;
+        }
+    }else{
+        $chiffreLettre = $dizainesException[$nombre];
     }
+
     return $chiffreLettre;
 }
-var_dump(decoupage(72, $chiffres, $dizaines));
+var_dump(decoupage(9, $chiffres, $dizaines, $dizainesException));
+var_dump(decoupage(22, $chiffres, $dizaines, $dizainesException));
+var_dump(decoupage(63, $chiffres, $dizaines, $dizainesException));
+var_dump(decoupage(57, $chiffres, $dizaines, $dizainesException));
+var_dump(decoupage(72, $chiffres, $dizaines, $dizainesException));
 /*$un = unite(3, $chiffres);
 $diz = dizaine(60,$dizaines);
 
 echo $diz.$un;
 */
+
+
+//echo centaine_plus("")
