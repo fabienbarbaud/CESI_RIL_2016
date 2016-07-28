@@ -50,13 +50,13 @@ function highCard($hand, $valeurs){
     }
     return($hand[$indexHMax]);
 }
-function isPair($hand,$valeurs){
-    $pair = false;
+function isPair($hand){
     $tab = [];
     foreach ($hand as $index => $carte) {
         $tab[$carte[0]]++;
     }
-    return $pair;
+
+    return in_array(2,$tab);
 }
 function isDoublePair(){
 
@@ -81,3 +81,5 @@ function isStraightFlush(){
 }
 
 var_dump(highCard($hand_1,$valeurs));
+
+var_dump(isPair($hand_2));
