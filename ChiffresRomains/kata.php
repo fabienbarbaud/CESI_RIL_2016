@@ -20,7 +20,12 @@ function convertToRomain($nbArabe, $mapping) {
 
     arsort($mapping);
     foreach ($mapping as $romIndex => $arabeItem) {
-       // $nbArabe/$
+        $nboccurence = ceil($nbArabe/$arabeItem);
+        for ($i=0;$i <$nboccurence;$i++){
+            $nbRomain .= $romIndex;
+            $nbArabe-=$arabeItem;
+        }
+
     }
     if ($nbArabe >=10) {
         $nbArabe-=10;
