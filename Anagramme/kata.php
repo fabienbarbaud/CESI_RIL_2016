@@ -6,6 +6,10 @@ function anagramme($mot, $dictionnaire) {
 
     foreach ($dictionnaire as $index => $item) {
 
+        if (strlen($item) == strlen($mot)){
+            $mot_dictionnaire = str_split($item);
+           // in_array()
+        }
     }
 }
 
